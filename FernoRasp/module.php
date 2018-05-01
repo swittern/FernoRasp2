@@ -88,6 +88,27 @@
 			print_r($result);
 			
 			$ssh->disconnect();
-        }
+		}
+		
+		public function TestConnection() {
+            //SSH Login : Beginn
+	
+			$FernoRaspiIP = $this->ReadPropertyString("GatewayIP");
+			$Login = $this->ReadPropertyString("Login");
+			$Passwort = $this->ReadPropertyString("Passwort");
+
+			$ssh = new Net_SSH2($FernoRaspiIP);
+
+			//Anmeldeuser und Passwort für Raspberry nach UFT8 konvertieren
+			//nur mit UTF8 Einstellung klappt auch ein putty login
+			//ohne diese Konvertierung erscheint immer "Login Failed" auch hier per ssh->login
+			$username = utf8_encode( $Login );
+			$password = utf8_encode( $Passwort );
+
+				if (!$ssh->login($username, $password)) // Hier der echte Login
+				{
+					exit('Login Failed');
+				}
+		}
     }
 ?>

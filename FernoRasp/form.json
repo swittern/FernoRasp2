@@ -1,9 +1,9 @@
 {
 	"elements":
 	[
-		{ "name": "GatewayIP", "type": "ValidationTextBox", "caption": "IP Adresse Raspberry" },
-		{ "name": "Login", "type": "ValidationTextBox", "caption": "Login" }
-		{ "name": "Password", "type": "ValidationTextBox", "caption": "Passwort" }
+		{ "type": "ValidationTextBox", "name": "GatewayIP", "caption": "IP Adresse Raspberry" },
+		{ "type": "ValidationTextBox", "name": "Login", "caption": "Login" }
+		{ "type": "ValidationTextBox", "name": "Password", "caption": "Passwort" }
 	],
 	"actions":
 	[
