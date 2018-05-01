@@ -121,6 +121,7 @@
 				else {
 					$this->SetStatus(102);
 				}
+			}
 		}
     }
 ?>
