@@ -26,6 +26,8 @@
 			$this->RegisterPropertyString("GatewayIP", "");
 			$this->RegisterPropertyString("Login", "");
 			$this->RegisterPropertyString("Password", "");
+
+			$this->RegisterVariable("Command", "Command");
 			 
         }
  
@@ -95,7 +97,7 @@
 	
 			$FernoRaspiIP = $this->ReadPropertyString("GatewayIP");
 			$Login = $this->ReadPropertyString("Login");
-			$Passwort = $this->ReadPropertyString("Passwort");
+			$Passwort = $this->ReadPropertyString("Password");
 
 			$ssh = new Net_SSH2($FernoRaspiIP);
 
