@@ -27,8 +27,7 @@
 			$this->RegisterPropertyString("Login", "");
 			$this->RegisterPropertyString("Password", "");
 
-			$this->RegisterVariableString("Command", "Command");
-			 
+						 
         }
  
         // Überschreibt die intere IPS_ApplyChanges($id) Funktion
@@ -39,6 +38,10 @@
 			$GatewayIP = $this->ReadPropertyString("GatewayIP");
 			$Login = $this->ReadPropertyString("Login");
 			$Passwort = $this->ReadPropertyString("Password");
+
+			$this->RegisterVariableString("Command", "Command");
+
+			$this->SetStatus(101);
         }
  
         /**
@@ -55,11 +58,11 @@
 			
 			// Debug
 			
-			print_r($Login);
+			/*print_r($Login);
 			print_r($Passwort);
 			print_r($FernoRaspiIP);
 			print_r($Command);
-			
+			*/
 
 			// Steuercode aus Array holen
 			// $code = $FCodeArray[$codeID];
@@ -87,7 +90,7 @@
 			$result = $ssh->exec($Command);
 
 			
-			print_r($result);
+			//print_r($result);
 			
 			$ssh->disconnect();
 		}
@@ -98,6 +101,9 @@
 			$FernoRaspiIP = $this->ReadPropertyString("GatewayIP");
 			$Login = $this->ReadPropertyString("Login");
 			$Passwort = $this->ReadPropertyString("Password");
+
+			if ($FernoRaspiIP  == "" || $Passwort == "" || $Login == "") {
+				$this->SetStatus(205); // field must not be empty
 
 			$ssh = new Net_SSH2($FernoRaspiIP);
 
@@ -110,7 +116,7 @@
 				if (!$ssh->login($username, $password)) // Hier der echte Login
 				{
 					$this->SetStatus(201);
-					exit('Login Failed');
+					//exit('Login Failed');
 				}
 				else {
 					$this->SetStatus(102);
