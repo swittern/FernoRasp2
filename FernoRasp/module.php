@@ -49,7 +49,7 @@
 	
 			$FernoRaspiIP = $this->ReadPropertyString("GatewayIP");
 			$Login = $this->ReadPropertyString("Login");
-			$Passwort = $this->ReadPropertyString("Passwort");
+			$Passwort = $this->ReadPropertyString("Password");
 			
 			// Debug
 			
