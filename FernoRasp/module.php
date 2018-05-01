@@ -2,7 +2,7 @@
     
 	//require_once("lib/SSH2.php");  // diverse Klassen
 	include __DIR__ . "/../libs/SSH2.php";
-	include __DIR__ . "/../libs/FR_Codes.php";
+	//include __DIR__ . "/../libs/FR_Codes.php";
 		
 	
 	// Klassendefinition
@@ -44,7 +44,7 @@
         * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur Verfügung gestellt:
         *
         */
-        public function SendFernotroCmd($codeID) {
+        public function SendFernoCmd($Command) {
             //SSH Login : Beginn
 	
 			$FernoRaspiIP = $this->ReadPropertyString("GatewayIP");
@@ -52,15 +52,17 @@
 			$Passwort = $this->ReadPropertyString("Passwort");
 			
 			// Debug
+			
 			print_r($Login);
 			print_r($Passwort);
 			print_r($FernoRaspiIP);
 			print_r($codeID);
 			
-			// Steuercode aus Array holen
-			$code = $FCodeArray[$codeID];
 
-			print_r($code);
+			// Steuercode aus Array holen
+			// $code = $FCodeArray[$codeID];
+
+			 print_r($code);
 			
 			// IP vom Raspberry
 			$ssh = new Net_SSH2($FernoRaspiIP);
@@ -79,7 +81,8 @@
 
 
 			// Steuercode senden
-			$result = $ssh->exec("sudo ./fernotron-control/FernotronSend ".$code." 3");
+			//$result = $ssh->exec("sudo ./fernotron-control/FernotronSend ".$code." 3");
+			$result = $ssh->exec($Command);
 
 			
 			print_r($result);
