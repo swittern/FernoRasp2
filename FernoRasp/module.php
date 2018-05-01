@@ -1,7 +1,9 @@
 <?
     
-	require_once("Net/SSH2.php");  // diverse Klassen
-	include('55120 /*[Program\TEST_AREA\Fernotron\FernotronCodes]*/.ips.php');
+	//require_once("lib/SSH2.php");  // diverse Klassen
+	include __DIR__ . "/../libs/SSH2.php";
+	include __DIR__ . "/../libs/FR_Codes.php";
+		
 	
 	// Klassendefinition
     class FernoRasp extends IPSModule {
