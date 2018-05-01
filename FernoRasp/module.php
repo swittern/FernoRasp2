@@ -27,7 +27,7 @@
 			$this->RegisterPropertyString("Login", "");
 			$this->RegisterPropertyString("Password", "");
 
-			$this->RegisterVariableString("Command", "Command");
+			// $this->RegisterVariableString("Command", "Command");
 						 
         }
  
@@ -56,14 +56,14 @@
         *
         */
 	
-		public function SendFernoCmd() {
+		public function SendFernoCmd(string $Command) {
             //SSH Login : Beginn
 	
 			$FernoRaspiIP = $this->ReadPropertyString("GatewayIP");
 			$Login = $this->ReadPropertyString("Login");
 			$Passwort = $this->ReadPropertyString("Password");
 
-			$Command = $this->ReadVariableString("Command");
+			// $Command = $this->ReadVariableString("Command");
 			
 			// Debug
 			
