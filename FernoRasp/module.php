@@ -27,7 +27,7 @@
 			$this->RegisterPropertyString("Login", "");
 			$this->RegisterPropertyString("Password", "");
 
-			$this->RegisterVariable("Command", "Command");
+			$this->RegisterVariableString("Command", "Command");
 			 
         }
  
@@ -58,13 +58,13 @@
 			print_r($Login);
 			print_r($Passwort);
 			print_r($FernoRaspiIP);
-			print_r($codeID);
+			print_r($Command);
 			
 
 			// Steuercode aus Array holen
 			// $code = $FCodeArray[$codeID];
 
-			 print_r($code);
+			//print_r($code);
 			
 			// IP vom Raspberry
 			$ssh = new Net_SSH2($FernoRaspiIP);
