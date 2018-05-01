@@ -27,6 +27,7 @@
 			$this->RegisterPropertyString("Login", "");
 			$this->RegisterPropertyString("Password", "");
 
+			$this->RegisterVariableString("Command", "Command");
 						 
         }
  
@@ -39,11 +40,16 @@
 			$Login = $this->ReadPropertyString("Login");
 			$Passwort = $this->ReadPropertyString("Password");
 
-			$this->RegisterVariableString("Command", "Command");
 
 			//$this->SetStatus(101);
         }
  
+		public function Destroy() {
+			//Never delete this line!
+			parent::Destroy();
+			
+		}
+
         /**
         * Die folgenden Funktionen stehen automatisch zur Verfügung, wenn das Modul über die "Module Control" eingefügt wurden.
         * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur Verfügung gestellt:
@@ -54,7 +60,7 @@
 	 	* @param string $Command
 	 	* @return bool
 	 	*/
-		public function SendFernoCmd($Command) {
+		public function SendFernoCmd(string $Command) {
             //SSH Login : Beginn
 	
 			$FernoRaspiIP = $this->ReadPropertyString("GatewayIP");
