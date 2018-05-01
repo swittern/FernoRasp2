@@ -67,11 +67,11 @@
 			
 			// Debug
 			
-			print_r($Login);
+			/*print_r($Login);
 			print_r($Passwort);
 			print_r($FernoRaspiIP);
 			print_r($Command);
-			
+			*/
 
 			// Steuercode aus Array holen
 			// $code = $FCodeArray[$codeID];
