@@ -60,12 +60,14 @@
 	 	* @param string $Command
 	 	* @return bool
 	 	*/
-		public function SendFernoCmd(string $Command) {
+		public function SendFernoCmd() {
             //SSH Login : Beginn
 	
 			$FernoRaspiIP = $this->ReadPropertyString("GatewayIP");
 			$Login = $this->ReadPropertyString("Login");
 			$Passwort = $this->ReadPropertyString("Password");
+
+			$Command = $this->ReadVariableString("Command");
 			
 			// Debug
 			
