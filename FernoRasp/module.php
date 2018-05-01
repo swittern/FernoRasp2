@@ -41,7 +41,7 @@
 
 			$this->RegisterVariableString("Command", "Command");
 
-			$this->SetStatus(101);
+			//$this->SetStatus(101);
         }
  
         /**
@@ -49,7 +49,12 @@
         * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur Verfügung gestellt:
         *
         */
-        public function SendFernoCmd($Command) {
+			/**
+	 	* Send SSH remote command
+	 	* @param string $Command
+	 	* @return bool
+	 	*/
+		public function SendFernoCmd($Command) {
             //SSH Login : Beginn
 	
 			$FernoRaspiIP = $this->ReadPropertyString("GatewayIP");
@@ -93,6 +98,8 @@
 			//print_r($result);
 			
 			$ssh->disconnect();
+
+			return $result;
 		}
 		
 		public function TestConnection() {

@@ -10,13 +10,14 @@
 
 	"actions":
     [
-        	{ "type": "Button", "label": "Test Connection", "onClick": "FR_TestConnection();" },
+        	{ "type": "Button", "label": "Test Connection", "onClick": "FR_TestConnection($id);" },
     ],
 	
 	"status":
 	[
         	{ "code": 102, "icon": "active", "caption": "Login information valid" },
-        	{ "code": 201, "icon": "error", "caption": "Authentication failed" }
+			{ "code": 201, "icon": "error", "caption": "Authentication failed" },
+			{ "code": 205, "icon": "error", "caption": "Empty fields not allowed" },
         	  
     ],
 }
