@@ -1,12 +1,22 @@
 {
 	"elements":
 	[
-		{ "type": "ValidationTextBox", "name": "GatewayIP", "caption": "IP Adresse Raspberry" },
-		{ "type": "ValidationTextBox", "name": "Login", "caption": "Login" }
-		{ "type": "ValidationTextBox", "name": "Password", "caption": "Passwort" }
+		{ "type": "Label", "label": "Raspi Connection" },
+		{ "type": "ValidationTextBox", "name": "Login", "caption": "Login" },		
+		{ "type": "PasswordTextBox", "name": "Password", "caption": "Password" },
+		{ "type": "ValidationTextBox", "name": "GatewayIP", "caption": "IP Gateway" },
+		
 	],
+
 	"actions":
+    [
+        	{ "type": "Button", "label": "Test Connection", "onClick": "FR_TestConnection();" },
+    ],
+	
+	"status":
 	[
-		{ "type": "Button", "label": "Test Connection", "onClick": "FR_TestConnection();" }
-	]	
+        	{ "code": 102, "icon": "active", "caption": "Login information valid" },
+        	{ "code": 201, "icon": "error", "caption": "Authentication failed" }
+        	  
+    ],
 }

@@ -107,7 +107,11 @@
 
 				if (!$ssh->login($username, $password)) // Hier der echte Login
 				{
+					$this->SetStatus(201);
 					exit('Login Failed');
+				}
+				else {
+					$this->SetStatus(102);
 				}
 		}
     }
