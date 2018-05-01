@@ -7,7 +7,7 @@
 	
 	// Klassendefinition
     class FernoRasp extends IPSModule {
- 
+ /*
         // Der Konstruktor des Moduls
         // Überschreibt den Standard Kontruktor von IPS
         public function __construct($InstanceID) {
@@ -16,7 +16,7 @@
  
             // Selbsterstellter Code
         }
- 
+ */
         // Überschreibt die interne IPS_Create($id) Funktion
         public function Create() {
             // Diese Zeile nicht löschen.
@@ -55,11 +55,7 @@
         * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur Verfügung gestellt:
         *
         */
-			/**
-	 	* Send SSH remote command
-	 	* @param string $Command
-	 	* @return bool
-	 	*/
+	
 		public function SendFernoCmd() {
             //SSH Login : Beginn
 	
