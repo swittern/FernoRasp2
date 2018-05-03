@@ -194,9 +194,6 @@
 				$CodeID = $DeviceID.$GroupID;							
 			}
 			
-			print_r($CodeID);
-
-			
 			return $CodeID;
 		}
 
