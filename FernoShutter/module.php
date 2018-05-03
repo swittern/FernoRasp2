@@ -82,7 +82,7 @@
 			$Code = $FCodeArray[$CodeID];
 
 			print_r($Code);
-			
+
 			return $Code;
 		}
 
@@ -91,20 +91,20 @@
 			// CHECK OUT: https://github.com/Wolbolar/IPSymconAIOGateway/blob/master/AIO%20Somfy%20RTS%20Device/module.php
 			$ParentID = $this->GetParent();
 
-			$Code = BuildCode()."u";			
+			$Code = $this->BuildCode()."u";			
 			
         }
 		
         public function ShutterDown() {
 			$ParentID = $this->GetParent();
 		
-			$Code = BuildCode()."d";			
+			$Code = $this->BuildCode()."d";			
         }
 
         public function ShutterStop() {
 			$ParentID = $this->GetParent();
 			
-			$Code = BuildCode()."s";			
+			$Code = $this->BuildCode()."s";			
 
 		}
 		
