@@ -56,7 +56,7 @@
         *
 		*/
 		
-		protected function GetRemoteCode($CodeID) {
+		protected function GetRemoteCode(string $CodeID) {
 
 			//Codes definieren
 			$FCodeArray = array(
@@ -170,7 +170,9 @@
 			"aau"=>"81111111633333314126333333124163333124331633331241225412431433154124314122633331224126333312224163143143331631431431225433124331254331243141",
 			);
 		
-			return $FCodeArray[$CodeID];
+			$remoteCode = $FCodeArray[$CodeID];
+
+			return $remoteCode;
 		}
 
 		protected function GetParent() {
@@ -203,7 +205,10 @@
 			// CHECK OUT: https://github.com/Wolbolar/IPSymconAIOGateway/blob/master/AIO%20Somfy%20RTS%20Device/module.php
 			$ParentID = $this->GetParent();
 
-			$CodeID = $this->BuildCode()."u";			
+			$CodeID = $this->BuildCode()."u";
+			
+			print_r($CodeID);
+			
 			// Steuercode aus Array holen
 			$Code = GetRemoteCode[$CodeID];
 
