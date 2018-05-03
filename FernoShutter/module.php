@@ -78,12 +78,8 @@
 			
 			print_r($CodeID);
 
-			// Steuercode aus Array holen
-			$Code = $FCodeArray[$CodeID];
-
-			print_r($Code);
-
-			return $Code;
+			
+			return $CodeID;
 		}
 
 
@@ -91,21 +87,31 @@
 			// CHECK OUT: https://github.com/Wolbolar/IPSymconAIOGateway/blob/master/AIO%20Somfy%20RTS%20Device/module.php
 			$ParentID = $this->GetParent();
 
-			$Code = $this->BuildCode()."u";			
-			
+			$CodeID = $this->BuildCode()."u";			
+			// Steuercode aus Array holen
+			$Code = $FCodeArray[$CodeID];
+
+			print_r($Code);
         }
 		
         public function ShutterDown() {
 			$ParentID = $this->GetParent();
 		
-			$Code = $this->BuildCode()."d";			
+			$CodeID = $this->BuildCode()."d";
+			// Steuercode aus Array holen
+			$Code = $FCodeArray[$CodeID];
+
+			print_r($Code);			
         }
 
         public function ShutterStop() {
 			$ParentID = $this->GetParent();
 			
-			$Code = $this->BuildCode()."s";			
-
+			$CodeID = $this->BuildCode()."s";			
+			
+			// Steuercode aus Array holen
+			$Code = $FCodeArray[$CodeID];
+			print_r($Code);
 		}
 		
     }
