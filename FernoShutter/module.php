@@ -211,6 +211,8 @@
 			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
 			print_r($Cmd);
 
+			$result = FR_SendFernoCmd($Cmd);
+
         }
 		
         public function ShutterDown() {
@@ -220,7 +222,9 @@
 			// Steuercode aus Array holen
 			$Code = $this->GetRemoteCode($CodeID);
 			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
-			print_r($Cmd);			
+			print_r($Cmd);
+			
+			$result = FR_SendFernoCmd($Cmd);
         }
 
         public function ShutterStop() {
@@ -232,6 +236,8 @@
 			$Code = $this->GetRemoteCode($CodeID);
 			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
 			print_r($Cmd);
+
+			$result = FR_SendFernoCmd($Cmd);
 		}
 		
     }
