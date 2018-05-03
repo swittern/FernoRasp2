@@ -56,7 +56,7 @@
         *
 		*/
 		
-		protected function GetRemoteCode(string $CodeID) {
+		protected function GetRemoteCode(const $CodeID) {
 
 			//Codes definieren
 			$FCodeArray = array(
@@ -207,7 +207,7 @@
 			print_r($CodeID);
 			
 			// Steuercode aus Array holen
-			$Code = GetRemoteCode[$CodeID];
+			string $Code = GetRemoteCode[$CodeID];
 
 			print_r($Code);
         }
