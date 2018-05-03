@@ -89,7 +89,7 @@
 
 			$CodeID = $this->BuildCode()."u";			
 			// Steuercode aus Array holen
-			$Code = $FCodeArray[$CodeID];
+			$Code = GetRemoteCode[$CodeID];
 
 			print_r($Code);
         }
@@ -99,7 +99,7 @@
 		
 			$CodeID = $this->BuildCode()."d";
 			// Steuercode aus Array holen
-			$Code = $FCodeArray[$CodeID];
+			$Code = GetRemoteCode[$CodeID];
 
 			print_r($Code);			
         }
@@ -110,7 +110,7 @@
 			$CodeID = $this->BuildCode()."s";			
 			
 			// Steuercode aus Array holen
-			$Code = $FCodeArray[$CodeID];
+			$Code = GetRemoteCode[$CodeID];
 			print_r($Code);
 		}
 		
