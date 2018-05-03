@@ -8,8 +8,8 @@
 	],
 	"actions":
 	[
-		{ "type": "Button", "label": "Up", "onClick": "FS_ShutterUp();" },
-		{ "type": "Button", "label": "Stop", "onClick": "FS_ShutterStop();" },
-		{ "type": "Button", "label": "Down", "onClick": "FS_ShutterDown();" }
+		{ "type": "Button", "label": "Up", "onClick": "FS_ShutterUp($id);" },
+		{ "type": "Button", "label": "Stop", "onClick": "FS_ShutterStop($id);" },
+		{ "type": "Button", "label": "Down", "onClick": "FS_ShutterDown($id);" }
 	]	
 }
