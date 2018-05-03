@@ -193,7 +193,7 @@
 			} elseif($MasterControl) {
 				$CodeID = "aa";
 			} else {
-				$CodeID = $DeviceID.$GroupID;							
+				$CodeID = $GroupID.$DeviceID;							
 			}
 			
 			return $CodeID;
@@ -206,14 +206,14 @@
 
 			$CodeID = $this->BuildCode()."u";
 			
-			print_r($ParentID);
+			//print_r($ParentID);
 			
 			// Steuercode aus Array holen
 			$Code = $this->GetRemoteCode($CodeID);
 			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
-			print_r($Cmd);
+			//print_r($Cmd);
 
-			$result = FR_SendFernoCmd($ParentID, $this->$Cmd);
+			$result = FR_SendFernoCmd($ParentID, $Cmd);
 
         }
 		
@@ -224,9 +224,9 @@
 			// Steuercode aus Array holen
 			$Code = $this->GetRemoteCode($CodeID);
 			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
-			print_r($Cmd);
+			//print_r($Cmd);
 			
-			$result = FR_SendFernoCmd($ParentID, $this->$Cmd);
+			$result = FR_SendFernoCmd($ParentID, $Cmd);
         }
 
         public function ShutterStop() {
@@ -237,9 +237,9 @@
 			// Steuercode aus Array holen
 			$Code = $this->GetRemoteCode($CodeID);
 			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
-			print_r($Cmd);
+			//print_r($Cmd);
 
-			$result = FR_SendFernoCmd($ParentID, $this->$Cmd);
+			$result = FR_SendFernoCmd($ParentID, $Cmd);
 		}
 		
     }
