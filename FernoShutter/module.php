@@ -37,6 +37,8 @@
 			$DeviceID = $this->ReadPropertyInteger("DeviceID");
 			$GroupControl = $this->ReadPropertyBoolean("GroupControl");			
 			$MasterControl = $this->ReadPropertyBoolean("MasterControl");
+
+			$this->ConnectParent("{7937E42B-1E93-454B-B2B4-5F754073B217}");
 			
 			$this->ValidateConfiguration();	
         }
@@ -211,7 +213,7 @@
 			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
 			print_r($Cmd);
 
-			$result = FR_SendFernoCmd($Cmd);
+			$result = FR_SendFernoCmd($this->$Cmd);
 
         }
 		
@@ -224,7 +226,7 @@
 			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
 			print_r($Cmd);
 			
-			$result = FR_SendFernoCmd($Cmd);
+			$result = FR_SendFernoCmd($this->$Cmd);
         }
 
         public function ShutterStop() {
@@ -237,7 +239,7 @@
 			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
 			print_r($Cmd);
 
-			$result = FR_SendFernoCmd($Cmd);
+			$result = FR_SendFernoCmd($this->$Cmd);
 		}
 		
     }
