@@ -56,7 +56,7 @@
         *
 		*/
 		
-		protected function GetRemoteCode(const $CodeID) {
+		protected function GetRemoteCode($CodeID) {
 
 			//Codes definieren
 			$FCodeArray = array(
@@ -207,9 +207,10 @@
 			print_r($CodeID);
 			
 			// Steuercode aus Array holen
-			string $Code = GetRemoteCode[$CodeID];
+			$Code = $this->GetRemoteCode($CodeID);
+			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
+			print_r($Cmd);
 
-			print_r($Code);
         }
 		
         public function ShutterDown() {
@@ -217,9 +218,9 @@
 		
 			$CodeID = $this->BuildCode()."d";
 			// Steuercode aus Array holen
-			$Code = GetRemoteCode[$CodeID];
-
-			print_r($Code);			
+			$Code = $this->GetRemoteCode($CodeID);
+			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
+			print_r($Cmd);			
         }
 
         public function ShutterStop() {
@@ -228,8 +229,9 @@
 			$CodeID = $this->BuildCode()."s";			
 			
 			// Steuercode aus Array holen
-			$Code = GetRemoteCode[$CodeID];
-			print_r($Code);
+			$Code = $this->GetRemoteCode($CodeID);
+			$Cmd = "sudo ./fernotron-control/FernotronSend ".$Code." 3";
+			print_r($Cmd);
 		}
 		
     }
