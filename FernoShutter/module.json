@@ -7,7 +7,7 @@
 	[
 		"Fernotron Remote Control"
 	],	
-	"parentRequirements": [],
+	"parentRequirements": [7937E42B-1E93-454B-B2B4-5F754073B217],
 	"childRequirements": [],
 	"implemented": [],
 	"prefix": "FS"
