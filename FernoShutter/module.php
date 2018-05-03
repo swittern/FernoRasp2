@@ -1,5 +1,7 @@
 <?
-    // Klassendefinition
+	include __DIR__ . "/../libs/FR_Codes.php";
+
+	// Klassendefinition
     class FernoShutter extends IPSModule {
  
         // Der Konstruktor des Moduls
@@ -41,6 +43,11 @@
 			$this->ValidateConfiguration();	
         }
 		
+		public function Destroy() {
+			//Never delete this line!
+			parent::Destroy();
+			
+		}
 		
 		private function ValidateConfiguration(){
 		}
@@ -62,12 +69,19 @@
 			$MasterControl = $this->ReadPropertyBoolean("MasterControl");
 
 			if($GroupControl) {
-				$Code = $GroupID."a";
+				$CodeID = $GroupID."a";
 			} elseif($MasterControl) {
-				$Code = "aa";
+				$CodeID = "aa";
 			} else {
-				$Code = $DeviceID.$GroupID;							
+				$CodeID = $DeviceID.$GroupID;							
 			}
+			
+			print_r($CodeID);
+
+			// Steuercode aus Array holen
+			$Code = $FCodeArray[$CodeID];
+
+			print_r($Code);
 			
 			return $Code;
 		}
