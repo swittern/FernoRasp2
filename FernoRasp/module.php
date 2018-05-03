@@ -65,6 +65,7 @@
 
 			// $Command = $this->ReadVariableString("Command");
 			
+			$this->SendDebug("Send Command", $Command, 0);
 			// Debug
 			
 			/*print_r($Login);
@@ -89,6 +90,7 @@
 
 				if (!$ssh->login($username, $password)) // Hier der echte Login
 				{
+					$this->SendDebug("SSH Login Failed", $ssh, 1);
 					$this->SetStatus(201);
 					exit('Login Failed');
 				}
@@ -98,7 +100,7 @@
 			// Steuercode senden
 			//$result = $ssh->exec("sudo ./fernotron-control/FernotronSend ".$code." 3");
 			$result = $ssh->exec($Command);
-
+			$this->SendDebug("Command sent", $result, 1);
 			
 			//print_r($result);
 			
@@ -127,10 +129,12 @@
 
 				if (!$ssh->login($username, $password)) // Hier der echte Login
 				{
+					$this->SendDebug("SSH Login Failed", $ssh, 1);
 					$this->SetStatus(201);
 					//exit('Login Failed');
 				}
 				else {
+					$this->SendDebug("SSH Login Successful", $ssh, 1);
 					$this->SetStatus(102);
 				}
 			}
