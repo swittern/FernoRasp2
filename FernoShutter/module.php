@@ -50,6 +50,21 @@
 		}
 		
 		private function ValidateConfiguration(){
+
+			$GroupID = $this->ReadPropertyInteger("GroupID");
+			$DeviceID = $this->ReadPropertyInteger("DeviceID");
+			$GroupControl = $this->ReadPropertyBoolean("GroupControl");			
+			$MasterControl = $this->ReadPropertyBoolean("MasterControl");
+			
+			if ($GroupControl  == true){
+				$this->UnregisterVariable("DeviceID");
+			}
+			
+			if ($MasterControl  == true){
+				$this->UnregisterVariable("GroupID");
+				$this->UnregisterVariable("DeviceID");
+			}
+			
 		}
  
         /**
