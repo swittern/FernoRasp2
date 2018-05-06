@@ -24,6 +24,17 @@
 			$this->RegisterPropertyInteger("DeviceID", 0);				// Gerätenummer des Rolladen (1-7)
 			$this->RegisterPropertyBoolean("MasterControl", false);		// Ist die Instanz Mastercontoller (alle Shutter)
 			$this->RegisterPropertyBoolean("GroupControl", false);		// Ist die Instanz Gruppencontroller (alle Shutter der Gruppe)
+
+			
+			//Properties
+			if(!IPS_VariableProfileExists("FS.ShutterControl")){
+				IPS_CreateVariableProfile("FS.ShutterControl", 1);
+				IPS_SetVariableProfileValues("FS.ShutterControl", 1, 2, 3, 0);
+				IPS_SetVariableProfileIcon("FS.ShutterControl", "Shutter");
+				IPS_SetVariableProfileAssociation("FS.ShutterControl", 1, "Hoch", "", -1);
+				IPS_SetVariableProfileAssociation("FS.ShutterControl", 2, "Runter", "", -1);
+				IPS_SetVariableProfileAssociation("FS.ShutterControl", 3, "Stop", "", -1);
+			}
  
         }
  
@@ -39,6 +50,17 @@
 			$MasterControl = $this->ReadPropertyBoolean("MasterControl");
 
 			$this->ConnectParent("{7937E42B-1E93-454B-B2B4-5F754073B217}");
+
+			if(@IPS_GetObjectIDByIdent("Jalousiesteuerung", $this->InstanceID) === false){
+				$vid = IPS_CreateVariable(1);
+				IPS_SetParent($vid, $this->InstanceID);
+				IPS_SetName($vid, "Jalousiesteuerung");
+				IPS_SetIdent($vid, "Jalousiesteuerung");
+				IPS_SetVariableCustomProfile($vid, "FS.ShutterControl");
+				$this->EnableAction("Jalousiesteuerung");
+				SetValue($vid, 0);
+								
+			}
 			
 			$this->ValidateConfiguration();	
         }
