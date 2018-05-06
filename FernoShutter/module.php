@@ -96,6 +96,23 @@
         *
 		*/
 		
+		public function RequestAction($Ident, $Value) {
+		
+			switch($Value) {
+				case "1":
+					$this->ShutterUp($Ident);
+					break;
+				case "2":
+					$this->ShutterDown($Ident);
+					break;
+				case "3":
+					$this->ShutterStop($Ident);
+					break;
+				default:
+					throw new Exception("Invalid action");
+			}
+		}
+
 		protected function GetRemoteCode($CodeID) {
 
 			//Codes definieren
