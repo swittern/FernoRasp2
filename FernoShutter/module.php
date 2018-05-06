@@ -56,6 +56,7 @@
 			$GroupControl = $this->ReadPropertyBoolean("GroupControl");			
 			$MasterControl = $this->ReadPropertyBoolean("MasterControl");
 			
+			/*
 			if ($GroupControl  == true){
 				$this->UnregisterVariable("DeviceID");
 			}
@@ -64,7 +65,7 @@
 				$this->UnregisterVariable("GroupID");
 				$this->UnregisterVariable("DeviceID");
 			}
-			
+			*/
 		}
  
         /**
