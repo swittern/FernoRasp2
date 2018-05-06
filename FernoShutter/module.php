@@ -31,9 +31,9 @@
 				IPS_CreateVariableProfile("FS.ShutterControl", 1);
 				IPS_SetVariableProfileValues("FS.ShutterControl", 1, 2, 3, 0);
 				IPS_SetVariableProfileIcon("FS.ShutterControl", "Shutter");
-				IPS_SetVariableProfileAssociation("FS.ShutterControl", 1, "Hoch", "", -1);
-				IPS_SetVariableProfileAssociation("FS.ShutterControl", 2, "Runter", "", -1);
-				IPS_SetVariableProfileAssociation("FS.ShutterControl", 3, "Stop", "", -1);
+				IPS_SetVariableProfileAssociation("FS.ShutterControl", 1, "Hoch", "", 0xFFFFFF);
+				IPS_SetVariableProfileAssociation("FS.ShutterControl", 2, "Runter", "", 0xFFFFFF);
+				IPS_SetVariableProfileAssociation("FS.ShutterControl", 3, "Stop", "", 0xFFFFFF);
 			}
  
         }
